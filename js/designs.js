@@ -1,13 +1,17 @@
-// Select color input
-// Select size input
+// Set default color input
+var pickedColor="#000";
 
 // Submit button event listener
-document.addEventListener('click', function(evt) {
-  if (evt.target.id == "button") {
+button.addEventListener('click', function(evt) {
     makeGrid();
     evt.preventDefault();
-  }
 });
+
+// Change the colorPicker
+colorPicker.addEventListener("change", function(evt) {
+  pickedColor = evt.target.value;
+  console.log(pickedColor);
+})
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
