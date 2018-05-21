@@ -1,5 +1,7 @@
 // Set default color input
-var pickedColor="#000";
+let pickedColor="#000";
+// Set table element to a variable
+let myTable = document.getElementById('pixelCanvas');
 
 // Submit button event listener
 button.addEventListener('click', function(evt) {
@@ -13,11 +15,16 @@ colorPicker.addEventListener("change", function(evt) {
   console.log(pickedColor);
 })
 
+// Table cells is clicked
+myTable.addEventListener("click", function(evt) {
+  evt.target.bgColor = pickedColor;
+})
+
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
+
   let height = document.getElementById('inputHeight').value;
   let width = document.getElementById('inputWidth').value;
-  let myTable = document.getElementById('pixelCanvas');
 
   //delete existing rows in table
   for (let i = myTable.rows.length - 1; i >= 0; i--) {
