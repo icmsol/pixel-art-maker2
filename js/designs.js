@@ -25,7 +25,7 @@ function makeGrid() {
 
   // Create table
   for (let r = 0; r < height; r++) {
-    let row = '<tr id=row' + r + '></tr>';
+    let row = '<tr id="row' + r + '"></tr>';
     myTable.insertAdjacentHTML('beforeend', row);
     for (let c = 0; c < width; c++) {
       let cell = '<td></td>';
