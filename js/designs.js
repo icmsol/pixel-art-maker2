@@ -20,16 +20,17 @@ function makeGrid() {
 
   //delete existing rows in table
   for (let i = myTable.rows.length - 1; i >= 0; i--) {
-    myTable.removeChild(myTable.getElementsByTagName('tbody')[i]);
+    myTable.removeChild(myTable.getElementsByTagName('tr')[i]);
   }
 
   // Create table
   for (let r = 0; r < height; r++) {
-    let row = '<tr id="row' + r + '"></tr>';
-    myTable.insertAdjacentHTML('beforeend', row);
+    let newRow = document.createElement('tr');
+    myTable.appendChild(newRow);
+    document.getElementsByTagName("tr")[r].setAttribute("id", "row" + r);
     for (let c = 0; c < width; c++) {
-      let cell = '<td></td>';
-      document.getElementById('row' + r).insertAdjacentHTML('beforeend', cell);
+      let newColumn = document.createElement('td');
+      document.getElementById('row' + r).appendChild(newColumn);
     }
   }
 }
